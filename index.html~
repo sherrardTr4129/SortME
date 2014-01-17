@@ -31,7 +31,7 @@
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Say Hello To SortME, the image recognition robot!</h3>
 
-<p>Currently the source only recognizes number blocks. It will soon be expanded to accept user input to pick from a wide range of trackable objects. In the mean time, see below to lean how to compile the source on your beaglebone:</p>
+<p>The purpose of this project os to provide a platform that will be able to track a range of objects. It will run on the beaglebone black and will send data over serial to an arduino. Check the API for documentation. Currently the source only recognizes number blocks. It will soon be expanded to accept user input to pick from a wide range of trackable objects. In the mean time, see below to lean how to compile the source on your beaglebone:</p>
 
 <pre><code>
 $ cd SortME
@@ -48,7 +48,12 @@ $ make
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designs and Schematics</h3>
 
-<p>Please Reference <a href="designs.html"> This page</a> for picture, videos and technical details about the SortME robot. </p>
+<p>Please Reference <a href="schematic.html"> This page</a> for picture, videos and technical details about the SortME robot. </p>
+
+<h3>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h3>
+
+<p>Please Reference the API <a href="API.html">Here</a> for documentation of the SortME platform. </p>
 
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
