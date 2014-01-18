@@ -19,9 +19,6 @@
 using namespace std;
 //TODO add user input. more funtion calls to more vision operations
 
-
-
-
 int main(int argc, char** argv)
 {
     int camID;
