@@ -5,7 +5,6 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
-
 /**
 * \fn peopleFollower::PeopleFollow(cv::Mat frame)
 * \brief PeopleFollow() tracks people in a Mat image.

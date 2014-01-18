@@ -3,3 +3,5 @@ project( Sherrard_Sqaure_Tracking )
 find_package( OpenCV REQUIRED )
 add_executable( SortME main.cpp RobotSerial.cpp NumberExtractor.cpp peopleFollower.cpp)
 target_link_libraries( SortME ${OpenCV_LIBS} )
+
+

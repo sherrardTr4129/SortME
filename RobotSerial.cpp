@@ -9,7 +9,6 @@
 #include <errno.h>      
 #include <termios.h>    
 
-
 #include "RobotSerial.h"
 
 using namespace std;
