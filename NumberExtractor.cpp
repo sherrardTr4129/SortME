@@ -15,6 +15,13 @@
 using namespace std;
 using namespace cv;
 
+
+/**
+* \fn NumberExtractor::GetBlockFace(cv::Mat frame)
+* \brief getblockface() looks for square in the frame provided .
+* \param Mat frame, the mat containing the sqaure block frame
+* \return a Mat containing only the square face of the block.
+*/
 Mat NumberExtractor::GetBlockFace(Mat frame){
     Rect rect;
     Mat pyr, timg, gray0(frame.size(), CV_8U), gray;
@@ -47,6 +54,14 @@ Mat NumberExtractor::GetBlockFace(Mat frame){
 enum block {BlOCK0 = 0, BlOCK1 = 1 ,BlOCK2 = 2 ,BlOCK3 = 3 ,BlOCK4 = 4, 
 BlOCK5 = 5 ,BlOCK6 = 6 ,BlOCK7 = 7,BlOCK8 = 8 ,BlOCK9 = 9 };
 
+
+/**
+* \fn NumberExtractor::NumberExtract(cv::Mat blockFace, std::vector<cv::Mat> imageList)
+* \brief NumberExtract() extracts the number from the block face useing SURF descriptors from the provided imageList
+* \param the mat containing only the block face.
+  \param a list of images containg .jpg's of the blocks faces
+* \return the int containing the number on the block 
+*/
 int NumberExtractor::NumberExtract(Mat blockFace, vector<Mat> imageList)
 {
     int FoundNumber = 0;

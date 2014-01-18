@@ -1,4 +1,5 @@
-//Author: Trevor Sherrard
+//author: Trevor Sherrard
+//project: SortME
 
 #include <stdio.h>      
 #include <stdlib.h>
@@ -9,10 +10,18 @@
 #include <termios.h>    
 
 
-#include "RobotServer.h"
+#include "RobotSerial.h"
 
 using namespace std;
-void RobotServer::send(unsigned char NumToSend)
+
+/**
+* \fn RobotSerial::send(unsigned char NumToSend)
+* \brief sends an usigned char over serial to the arduino. 
+*  for people tracking, a 'l' or 'r' will be sent depending on the persons x value.
+*  for block sorting a char containing the number will be sent. (see main.cpp)
+* \param unsigned char charToSend, the char that will be sent to the arduino
+*/
+void RobotSerial::send(unsigned char charToSend)
 {
   int USB = open( "/dev/ttyUSB0", O_RDWR| O_NOCTTY );
   struct termios tty;
@@ -42,7 +51,7 @@ void RobotServer::send(unsigned char NumToSend)
 
   //unsigned char cmd[] = NumToSend;
   int n_written = 0;
-  write( USB, &NumToSend, 1 );
+  write( USB, &charToSend, 1 );
   close(USB);
 
 }
