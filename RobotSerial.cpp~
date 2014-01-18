@@ -1,5 +1,4 @@
-//author: Trevor Sherrard
-//project: SortME
+//Author: Trevor Sherrard
 
 #include <stdio.h>      
 #include <stdlib.h>

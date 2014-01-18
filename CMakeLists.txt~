@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.3)
 project( Sherrard_Sqaure_Tracking )
 find_package( OpenCV REQUIRED )
-add_executable( SortME main.cpp RobotSerial.cpp NumberExtractor.cpp peopleFollower.cpp)
+add_executable( SortME main.cpp RobotSerial.cpp NumberExtractor.cpp )
 target_link_libraries( SortME ${OpenCV_LIBS} )
