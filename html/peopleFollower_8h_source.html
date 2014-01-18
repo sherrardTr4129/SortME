@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>SortME: Member List</title>
+<title>SortME: peopleFollower.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -47,8 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -69,21 +69,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">NumberExtractor Member List</div>  </div>
+<div class="title">peopleFollower.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-This is the complete list of members for <a class="el" href="classNumberExtractor.html">NumberExtractor</a>, including all inherited members.<table>
-  <tr class="memlist"><td><a class="el" href="classNumberExtractor.html#a9050b9f20939693d75ef95f30fbe592c">GetBlockFace</a>(Mat frame)</td><td><a class="el" href="classNumberExtractor.html">NumberExtractor</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e">NumberExtract</a>(Mat blockFace, vector&lt; Mat &gt; imageList)</td><td><a class="el" href="classNumberExtractor.html">NumberExtractor</a></td><td></td></tr>
-</table></div><!-- contents -->
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//author: Trevor Sherrard</span>
+<a name="l00002"></a>00002 <span class="comment">//project: SortME</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 <span class="keyword">using namespace </span>cv;
+<a name="l00007"></a>00007 
+<a name="l00008"></a><a class="code" href="classpeopleFollower.html">00008</a> <span class="keyword">class </span><a class="code" href="classpeopleFollower.html">peopleFollower</a>
+<a name="l00009"></a>00009 {
+<a name="l00010"></a>00010     <span class="keyword">public</span>:
+<a name="l00011"></a>00011         <span class="keywordtype">int</span> PeopleFollow(Mat frame);
+<a name="l00012"></a>00012 };
+</pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>SortME: Member List</title>
+<title>SortME: RobotSerial Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -76,14 +76,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">NumberExtractor Member List</div>  </div>
+<div class="title">RobotSerial Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-This is the complete list of members for <a class="el" href="classNumberExtractor.html">NumberExtractor</a>, including all inherited members.<table>
-  <tr class="memlist"><td><a class="el" href="classNumberExtractor.html#a9050b9f20939693d75ef95f30fbe592c">GetBlockFace</a>(Mat frame)</td><td><a class="el" href="classNumberExtractor.html">NumberExtractor</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e">NumberExtract</a>(Mat blockFace, vector&lt; Mat &gt; imageList)</td><td><a class="el" href="classNumberExtractor.html">NumberExtractor</a></td><td></td></tr>
-</table></div><!-- contents -->
+<!-- doxytag: class="RobotSerial" -->
+<p><a href="classRobotSerial-members.html">List of all members.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobotSerial.html#a0acbaf8897f1794c38af682348253c27">send</a> (unsigned char NumToSort)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sends an usigned char over serial to the arduino. for people tracking, a 'l' or 'r' will be sent depending on the persons x value. for block sorting a char containing the number will be sent. (see main.cpp)  <a href="#a0acbaf8897f1794c38af682348253c27"></a><br/></td></tr>
+</table>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0acbaf8897f1794c38af682348253c27"></a><!-- doxytag: member="RobotSerial::send" ref="a0acbaf8897f1794c38af682348253c27" args="(unsigned char NumToSort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRobotSerial.html#a0acbaf8897f1794c38af682348253c27">RobotSerial::send</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>NumToSend</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>sends an usigned char over serial to the arduino. for people tracking, a 'l' or 'r' will be sent depending on the persons x value. for block sorting a char containing the number will be sent. (see main.cpp) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">unsigned</td><td>char charToSend, the char that will be sent to the arduino </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="RobotSerial_8h_source.html">RobotSerial.h</a></li>
+<li>RobotSerial.cpp</li>
+</ul>
+</div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"

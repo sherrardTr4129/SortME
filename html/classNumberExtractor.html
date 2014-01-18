@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>My Project: NumberExtractor Class Reference</title>
+<title>SortME: NumberExtractor Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">SortME
    
    </div>
    
@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -86,11 +87,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9050b9f20939693d75ef95f30fbe592c"></a><!-- doxytag: member="NumberExtractor::GetBlockFace" ref="a9050b9f20939693d75ef95f30fbe592c" args="(Mat frame)" -->
-Mat&#160;</td><td class="memItemRight" valign="bottom"><b>GetBlockFace</b> (Mat frame)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39055efe950c12df3d29e4f72b24a12e"></a><!-- doxytag: member="NumberExtractor::NumberExtract" ref="a39055efe950c12df3d29e4f72b24a12e" args="(Mat blockFace, vector&lt; Mat &gt; imageList)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>NumberExtract</b> (Mat blockFace, vector&lt; Mat &gt; imageList)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumberExtractor.html#a9050b9f20939693d75ef95f30fbe592c">GetBlockFace</a> (Mat frame)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">getblockface() looks for square in the frame provided .  <a href="#a9050b9f20939693d75ef95f30fbe592c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e">NumberExtract</a> (Mat blockFace, vector&lt; Mat &gt; imageList)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e" title="NumberExtract() extracts the number from the block face useing SURF descriptors from the provided ima...">NumberExtract()</a> extracts the number from the block face useing SURF descriptors from the provided imageList.  <a href="#a39055efe950c12df3d29e4f72b24a12e"></a><br/></td></tr>
 </table>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9050b9f20939693d75ef95f30fbe592c"></a><!-- doxytag: member="NumberExtractor::GetBlockFace" ref="a9050b9f20939693d75ef95f30fbe592c" args="(Mat frame)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mat <a class="el" href="classNumberExtractor.html#a9050b9f20939693d75ef95f30fbe592c">NumberExtractor::GetBlockFace</a> </td>
+          <td>(</td>
+          <td class="paramtype">Mat&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>getblockface() looks for square in the frame provided . </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mat</td><td>frame, the mat containing the sqaure block frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a Mat containing only the square face of the block. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a39055efe950c12df3d29e4f72b24a12e"></a><!-- doxytag: member="NumberExtractor::NumberExtract" ref="a39055efe950c12df3d29e4f72b24a12e" args="(Mat blockFace, vector&lt; Mat &gt; imageList)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e">NumberExtractor::NumberExtract</a> </td>
+          <td>(</td>
+          <td class="paramtype">Mat&#160;</td>
+          <td class="paramname"><em>blockFace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; Mat &gt;&#160;</td>
+          <td class="paramname"><em>imageList</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e" title="NumberExtract() extracts the number from the block face useing SURF descriptors from the provided ima...">NumberExtract()</a> extracts the number from the block face useing SURF descriptors from the provided imageList. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>mat containing only the block face. </td></tr>
+    <tr><td class="paramname">a</td><td>list of images containg .jpg's of the blocks faces </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the int containing the number on the block </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="NumberExtractor_8h_source.html">NumberExtractor.h</a></li>
 <li>NumberExtractor.cpp</li>
@@ -101,7 +166,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>NumberExtract</b> (Mat
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -113,7 +178,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>NumberExtract</b> (Mat
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 17 2014 01:20:54 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 18 2014 00:54:55 for SortME by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

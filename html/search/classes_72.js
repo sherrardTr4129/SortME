@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['robotserver',['RobotServer',['../classRobotServer.html',1,'']]]
+  ['robotserial',['RobotSerial',['../classRobotSerial.html',1,'']]]
 ];
