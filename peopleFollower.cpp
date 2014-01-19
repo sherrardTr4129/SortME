@@ -8,7 +8,7 @@ using namespace cv;
 /**
 * \fn peopleFollower::PeopleFollow(cv::Mat frame)
 * \brief PeopleFollow() tracks people in a Mat image.
-* \param Mat frame, the frame containing the person to be tracked 
+* \param frame, the Cv::Mat containing the person to be tracked 
 * \return the persons x cordinate (int)
 */
 int peopleFollower::PeopleFollow(Mat frame)
