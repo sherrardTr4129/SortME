@@ -18,7 +18,7 @@ using namespace std;
 * \brief sends an usigned char over serial to the arduino. 
 *  for people tracking, a 'l' or 'r' will be sent depending on the persons x value.
 *  for block sorting a char containing the number will be sent. (see main.cpp)
-* \param charToSend, the unsigned char that will be sent to the arduino
+* \param charToSend the unsigned char that will be sent to the arduino
 */
 void RobotSerial::send(unsigned char charToSend)
 {
