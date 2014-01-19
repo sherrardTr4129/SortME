@@ -111,11 +111,11 @@ Public Member Functions</h2></td></tr>
 <p>getblockface() looks for square in the frame provided . </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">frame,the</td><td>mat containing the sqaure block frame </td></tr>
+    <tr><td class="paramname">frame</td><td>the cv::Mat containing the sqaure block frame </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>a Mat containing only the square face of the block. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>cv::Mat containing only the square face of the block. </dd></dl>
 
 </div>
 </div>
@@ -147,8 +147,8 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="classNumberExtractor.html#a39055efe950c12df3d29e4f72b24a12e" title="NumberExtract() extracts the number from the block face useing SURF descriptors from the provided ima...">NumberExtract()</a> extracts the number from the block face useing SURF descriptors from the provided imageList. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">blockFace</td><td>the mat containing only the block face. </td></tr>
-    <tr><td class="paramname">imageList</td><td>containg .jpg's of the blocks faces </td></tr>
+    <tr><td class="paramname">blockFace</td><td>the cv::Mat containing only the block face. </td></tr>
+    <tr><td class="paramname">imageList</td><td>a vector of cv::Mat containing all the faces of the blocks </td></tr>
   </table>
   </dd>
 </dl>
@@ -178,7 +178,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 19 2014 00:30:41 for SortME by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 19 2014 00:37:37 for SortME by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
