@@ -29,6 +29,29 @@
     <div class="container">
       <section id="main_content">
         <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Have a look at RoboSort V1!</h3>
+
+<p>RoboSort V1 uses the following parts. 4 sparkfun mecanum wheels, 1 Arduino UNO Rev 3 and 1 adafruit motor shield. </p>
+<p>Here is a picture of the current working roboSort V1</p>
+
+<IMG SRC="roboSortV1.jpg" ALT="RoboSortV1.jpg" WIDTH=520 HEIGHT=720>
+
+<p>please look below to see some videos of roboSort v1 chassis on the move!</p>
+
+<video width="250" height="240" controls>
+  <source src="forward.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>&nbsp;&nbsp;&nbsp;&nbsp;<video width="250" height="240" controls>
+  <source src="side.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+
+<h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Plans for RoboSort V2</h3>
+
+<p>Good News! Parts have been ordered to upgrade the chassis. They include sheet of ABS plastic for the base, four new micro motors with a higher torque. The Camera and beagleBone Black will also be added in V2.</p>
+
 
       </section>
     </div>
