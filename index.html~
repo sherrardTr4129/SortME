@@ -16,7 +16,7 @@
     <header>
       <div class="container">
         <h1>SortME</h1>
-        <h2>An opensource robotic image recognition platform.</h2>
+        <h2>An open-source robotic image recognition platform.</h2>
 
         <section id="downloads">
           <a href="https://github.com/sherrardTr4129/SortME/zipball/master" class="btn">Download as .zip</a>
@@ -29,9 +29,9 @@
     <div class="container">
       <section id="main_content">
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Say Hello To SortME, the image recognition robot!</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Say hello to SortME, the image recognition robot!</h3>
 
-<p>The purpose of this project os to provide a platform that will be able to track a range of objects. It will run on the beaglebone black and will send data over serial to an arduino. Check the API for documentation. Currently the source only recognizes number blocks. It will soon be expanded to accept user input to pick from a wide range of trackable objects. In the mean time, see below to lean how to compile the source on your beaglebone:</p>
+<p>The purpose of this project is to provide a platform that will be able to track a range of objects. It will run on the beaglebone black and will send data over serial to an arduino. Check the API for documentation. Currently the source only supports recognition of numbered blocks and people. It will soon be expanded to accept user input to pick from a wide range of trackable objects. In the mean time, see below to lean how to compile the source on your beaglebone:</p>
 
 <pre><code>
 $ cd SortME
@@ -41,14 +41,14 @@ $ cmake ..
 $ make
 </code></pre>
 
-<p>The above example assumes you are compiling on your beaglebone. The executable can now be run by doing:</p>
+<p>The above example assumes you are compiling on your beaglebone Black. The executable can now be run by doing:</p>
 
 <pre><code>$ ./SortME </pre></code>
 
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designs and Schematics</h3>
 
-<p>Please Reference <a href="schematic.html"> This page</a> for picture, videos and technical details about the SortME robot. </p>
+<p>Please Reference <a href="schematic.html"> This page</a> for pictures, videos and technical details about the SortME robot. </p>
 
 <h3>
 <a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h3>
@@ -58,7 +58,7 @@ $ make
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>Currently, the only person working on this project is <a href="https://github.com/Sherrardtr4129" class="user-mention">@SherrardTr4129</a>. Interested in helping? This project currently needs someone well versed in PCB design and fabrication and someone who can build a better chasis.</p>
+<p>Currently, the only person working on this project is <a href="https://github.com/Sherrardtr4129" class="user-mention">@SherrardTr4129</a>. Interested in helping? This project currently needs someone well versed in PCB design and fabrication.</p>
 
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Contact Us</h3>
