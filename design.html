@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>SortME by sherrardTr4129</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>SortME</h1>
+        <h2>An opensource robotic image recognition platform.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/sherrardTr4129/SortME/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/sherrardTr4129/SortME/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/sherrardTr4129/SortME" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>SortME V2</h3>
+<p>Currently uses a BeagleBone Black, an arduino Uno, ABS plastic base, 4 sparkfun meccanum wheels,a logitech c120 webcam, and 4 servo city micro gear motors.</p>
+
+<h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>BeagleBone Black and Arduino communication</h3>
+
+<p>The target setup for SortME V2 is that the beagleBone Black captures and processes the image. It will then send either a character or an integer to the arduino via TTL Serial ports. The arduino can respond to this by moving the motors accordingly. The Beagle Bone's ports run on 3.3 Volts and the arduino runs on 5 Volts. So, a logic level shifter will be needed. The SortME v2 robot will be useing the sparkfun model, shown here:  </p>
+<IMG SRC="logic.jpg" ALT="logic.jpg" WIDTH=300 HEIGHT=320>
+
+<p>The setup of this converter with the beagle bone is shown here:</p>
+
+<IMG SRC="ArduinoTOBBB.jpg"ALT="ArduinoTOBBB" WIDTH=650 HEIGHT=550>
+
+
+
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
