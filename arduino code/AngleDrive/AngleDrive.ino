@@ -1,19 +1,18 @@
+#include <AFMotor.h>
+
 /*
 * Mecanum drive method for SortME V2 robot
-* Author: Trevor Sherrard
-* using the AFMotor library found here:
-* https://github.com/adafruit/Adafruit-Motor-Shield-library
-*/
+ * Author: Trevor Sherrard
+ * using the AFMotor library found here:
+ * https://github.com/adafruit/Adafruit-Motor-Shield-library
+ */
 
 
-#include <AFMotor.h>
 
 AF_DCMotor m1(1);
 AF_DCMotor m2(2);
 AF_DCMotor m3(3);
 AF_DCMotor m4(4);
-AF_DCMotor motorArr[4];
-
 
 int speedm1 = 0;
 int speedm2 = 1;
@@ -23,45 +22,75 @@ int speedm4 = 3;
 
 void setup()
 {
-motorArr[0] = m1;
-motorArr[1] = m2;
-motorArr[2] = m3;
-motorArr[3] = m4;
+  Serial.begin(9600);
 }
 
 void loop()
 {
-  int speed1, speed2, speed3, speed4 = 0;
-  double motors[4];
-  motors = getSpeedArray(45, 1);
-  speed1 = modifiedMap(motors[0], -1, 1, -256, 256);
-  speed2 = modifiedMap(motors[1], -1, 1, -256, 256);
-  speed3 = modifiedMap(motors[2], -1, 1, -256, 256);
-  speed4 = modifiedMap(motors[3], -1, 1, -256, 256);
+  double speed1, speed2, speed3, speed4 = 0;
+  speed1 = getSpeedArray(30, 1, 1);
+  speed2 = getSpeedArray(30, 1, 2);
+  speed3 = getSpeedArray(30, 1, 3);
+  speed4 = getSpeedArray(30, 1, 4);
+  Serial.print(speed1);
+
+  speed1 = modifiedMap(speed1, -1, 1, -255, 255);
+  speed2 = modifiedMap(speed2, -1, 1, -255, 255);
+  speed3 = modifiedMap(speed3, -1, 1, -255, 255);
+  speed4 = modifiedMap(speed4, -1, 1, -255, 255);
   
   int speedArr[4];
   speedArr[0] = speed1;
   speedArr[1] = speed2;
   speedArr[2] = speed3;
   speedArr[3] = speed4;
-  
-  for(int i = 0; i < 4; i++)
+
+
+  if(checkReverse1(speedArr[0]))
   {
-    if(checkReverse(speedArr[i])
-    {
-      motors[i].setSpeed(abs(speedArr[i]));
-      motors[i].run(BACKWARD);
-    }
-    else
-    {
-      motors.setSpeed(speedArr[i]);
-      motors[i].run(FORWARD);
-    }
+    m1.setSpeed(abs(speedArr[0]));
+    m1.run(BACKWARD);
   }
-   
+  else
+  {
+    m1.setSpeed(speedArr[0]);
+    m1.run(FORWARD);
+  }
+  
+  if(checkReverse1(speedArr[1]))
+  {
+    m2.setSpeed(abs(speedArr[1]));
+    m1.run(BACKWARD);
+  }
+  else
+  {
+    m2.setSpeed(speedArr[1]);
+    m2.run(FORWARD);
+  }
+    if(checkReverse1(speedArr[2]))
+  {
+    m3.setSpeed(abs(speedArr[2]));
+    m3.run(BACKWARD);
+  }
+  else
+  {
+    m3.setSpeed(speedArr[2]);
+    m3.run(FORWARD);
+  }
+    if(checkReverse1(speedArr[3]))
+  {
+    m4.setSpeed(abs(speedArr[3]));
+    m4.run(BACKWARD);
+  }
+  else
+  {
+    m4.setSpeed(speedArr[3]);
+    m4.run(FORWARD);
+  }
+  delay(1000);
 }
 
-boolean checkReverse(speedm)
+boolean checkReverse1(double speedm)
 {
   if(speedm < 0)
   {
@@ -71,7 +100,7 @@ boolean checkReverse(speedm)
   {
     return false;
   }
-  
+
 }
 
 double modifiedMap(double x, double in_min, double in_max, double out_min, double out_max)
@@ -81,9 +110,9 @@ double modifiedMap(double x, double in_min, double in_max, double out_min, doubl
   return (double) temp/4;
 }
 
-double[] getSpeedArray(double angle, double magnitude)
+double getSpeedArray(double angle, double magnitude, int wheelnumber)
 {
-  double motors[4]
+  double motorSpeed;
   if(magnitude > 1)
   {
     magnitude = 1;
@@ -92,18 +121,31 @@ double[] getSpeedArray(double angle, double magnitude)
   {
     magnitude = -1;
   }
-  
+
   if(angle > 360)
   {
     angle = 360;
   }
   double rad = angle * (PI/180);
-  xcos = cos(rad);
-  ysin = sin(rad);
-  motors[speedm4] = ysin * magnitude; //front left
-  motors[speedm2] = xcos * magnitude; //front right
-  motors[speedm1] = xcos * magnitude; //rear left
-  motors[speedm3] = ysin * magnitude; //rear right
-  return motors;
+  double xcos = cos(rad);
+  double ysin = sin(rad);
+  if(wheelnumber == 1)
+  {
+    motorSpeed = ysin * magnitude; //front left
+  }
+  else if(wheelnumber == 2)
+  {
+    motorSpeed = xcos * magnitude; //front right
+  }
+  else if(wheelnumber == 3)
+  {
+    motorSpeed = xcos * magnitude; //rear left
+  }
+  else if(wheelnumber == 4)
+  {
+    motorSpeed = ysin * magnitude; //rear right
+  }
+  return motorSpeed;
 }
+
 
