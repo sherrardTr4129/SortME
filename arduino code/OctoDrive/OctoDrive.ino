@@ -1,5 +1,5 @@
 /*
-*Basic drive functions for the SortME v2 robot.
+* More basic drive functions for the SortME v2 robot.
 * Author trevor sherrard
 * github: SherrardTr4129
 * uses the AFmotor library found here:
