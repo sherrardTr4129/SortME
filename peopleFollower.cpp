@@ -36,6 +36,14 @@ int peopleFollower::PeopleFollow(Mat frame)
        r.y += cvRound(r.height*0.07);
        r.height = cvRound(r.height*0.8);
        int x =(r.x + (r.width/2));
+       if(x > 320)
+       {
+	  x = 160; // mid screen
+       }
+       else if(x < 0)
+       {
+	  x = 160; // mid screen
+       }
        return x;
     }
 }
