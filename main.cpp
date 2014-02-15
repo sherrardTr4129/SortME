@@ -12,7 +12,7 @@
 #include "opencv/cv.h"
 
 #include "NumberExtractor.h"
-#include "RobotServer.h"
+#include "RobotSerial.h"
 #include "peopleFollower.h"
 
 
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     cout << "enter task: p for people tracking or b for block sorting" << endl;
     cin >> task;
    
-    RobotServer server;
+    RobotSerial serial;
     NumberExtractor extract;
     peopleFollower follow;
     VideoCapture cap;
@@ -73,8 +73,16 @@ int main(int argc, char** argv)
            {
              //extract number from blockface useing SURF
 	     int num = extract.NumberExtract(blockFace, imageList);
+	     stringstream ss;
+	     string s;
+ 	     ss << num;
+	     s = ss.str();
+
              //check if extracted number is even or odd, then send to arduino
-             server.send(num);         
+	     if(sizeof(s) > 0)
+	     {
+                serial.send(s[0]);  
+             }
            }
        }
        else if(task == "p" || task == "P")
@@ -82,11 +90,11 @@ int main(int argc, char** argv)
            int x = follow.PeopleFollow(frame);
            if(x/2 <= 140)
 	   {
-              server.send('r');
+              serial.send('r');
            }
            else if(x/2 >= 180)
            {
-              server.send('l');
+              serial.send('l');
            }
        }// end else if
     }//end while

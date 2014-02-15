@@ -12,5 +12,5 @@
 class RobotSerial
 {
      public: 
-          void send(unsigned char NumToSort); 
+          void send(char NumToSort); 
 };

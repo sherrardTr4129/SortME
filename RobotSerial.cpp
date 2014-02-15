@@ -4,8 +4,7 @@
   
 
 #include "RobotSerial.h"
-
-using namespace std;
+#include <fstream>
 
 /**
 * \fn RobotSerial::send(unsigned char NumToSend)
@@ -16,8 +15,7 @@ using namespace std;
 */
 void RobotSerial::send(char charToSend)
 {
-    fstream fs;
-    fs.open("/dev/ttyACM0");
-    fs << charToSend;
-    fs.close();
+    std::ofstream ofs ("/dev/ttyACM0", std::ofstream::out);
+    ofs << charToSend;
+    ofs.close();
 }
