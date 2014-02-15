@@ -14,6 +14,8 @@
 #include "NumberExtractor.h"
 #include "RobotSerial.h"
 #include "peopleFollower.h"
+#include "square.h"
+
 
 
 using namespace std;
@@ -28,12 +30,13 @@ int main(int argc, char** argv)
     cin >> cmID;
     camID = atoi(cmID.c_str());
  
-    cout << "enter task: p for people tracking or b for block sorting" << endl;
+    cout << "enter task: p for people tracking, b for block sorting, s for square tracking" << endl;
     cin >> task;
    
     RobotSerial serial;
     NumberExtractor extract;
     peopleFollower follow;
+    square sqr;
     VideoCapture cap;
     cap.set(CV_CAP_PROP_FRAME_WIDTH, 320);
     cap.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
@@ -97,5 +100,19 @@ int main(int argc, char** argv)
               serial.send('l');
            }
        }// end else if
+      else if(task == "s" || task == "S")
+      {
+           vector<vector<Point> > squares;
+	   int x = sqr.findSquare(frame, squares);
+           stringstream ss;
+	   string s;
+ 	   ss << x;
+	   s = ss.str();
+           if(sizeof(s) > 0)
+	   {
+              serial.send(s[0]);  
+           }
+           
+      } // end else if
     }//end while
 }//end main
