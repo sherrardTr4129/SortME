@@ -27,6 +27,7 @@ void loop()
 {
   char h = Serial.read();
   respondToChar(h);
+  Serial.println(h);
 }
 
 void straifL()
@@ -86,7 +87,7 @@ void Reverse()
 
 void respondToChar(char h)
 {
-    if( h == 'g')
+  if( h == 'g')
   {
     straifL();
   }
