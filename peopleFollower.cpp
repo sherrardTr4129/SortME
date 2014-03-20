@@ -11,7 +11,7 @@ using namespace cv;
 * \param frame the Cv::Mat containing the person to be tracked 
 * \return int The person's x cordinate 
 */
-int peopleFollower::PeopleFollow(Mat frame)
+Rect peopleFollower::PeopleFollow(Mat frame)
 {
     HOGDescriptor hog;
     hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
@@ -35,15 +35,6 @@ int peopleFollower::PeopleFollow(Mat frame)
        r.width = cvRound(r.width*0.8);
        r.y += cvRound(r.height*0.07);
        r.height = cvRound(r.height*0.8);
-       int x =(r.x + (r.width/2));
-       if(x > 320)
-       {
-	  x = 160; // mid screen
-       }
-       else if(x < 0)
-       {
-	  x = 160; // mid screen
-       }
-       return x;
+       return r ;
     }
 }

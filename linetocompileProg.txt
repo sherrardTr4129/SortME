@@ -1,0 +1,2 @@
+ g++ `pkg-config --cflags opencv` -o main main.cpp peopleFollower.cpp Serial.cpp arduino-serImp.c `pkg-config --libs opencv`
+

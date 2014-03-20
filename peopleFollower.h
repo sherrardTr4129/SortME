@@ -8,5 +8,5 @@ using namespace cv;
 class peopleFollower
 {
     public:
-        int PeopleFollow(Mat frame);
+        Rect PeopleFollow(Mat frame);
 };

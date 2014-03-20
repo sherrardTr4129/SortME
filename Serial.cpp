@@ -8,8 +8,9 @@
 #include <getopt.h>
 
 #include "arduino-serial-lib.h"
+#include "Serial.h"
 
-int sendChar(const char* c)
+int Serial::sendChar(const char* c)
 {
        const int buf_max = 256;
 
