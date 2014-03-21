@@ -10,11 +10,9 @@
 #include "arduino-serial-lib.h"
 #include "Serial.h"
 
-int Serial::sendChar(const char* c)
+int Serial::sendChar(const char* c, int fd)
 {
        const int buf_max = 256;
-
-       int fd = -1;
        char serialport[buf_max];
        int baudrate = 9600;  // default
        char quiet=0;
@@ -23,10 +21,6 @@ int Serial::sendChar(const char* c)
        char buf[buf_max];
        int rc,n;
        strcpy(buf, c);
-       baudrate = strtol("9600",NULL,10);
-       fd = serialport_init("/dev/ttyACM0", baudrate);
-       if( fd==-1 ) return -1;
-       serialport_flush(fd);
        rc = serialport_write(fd, buf);
        return 0;
 }    

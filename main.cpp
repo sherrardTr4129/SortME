@@ -11,6 +11,8 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv/cv.h"
 
+#include "arduino-serial-lib.h"
+
 #include "Serial.h"
 #include "peopleFollower.h"
 #include "square.h"
@@ -45,14 +47,13 @@ int main(int argc, char** argv)
 
     cap.open(camID);
     Mat frame;
-    vector<Mat> imageList;
-    for(int i = 0; i <=9; i++)
-    {
-        stringstream stream;
-        stream << i << ".jpg";
-        string filename = stream.str();
-        imageList.push_back(imread(filename));
-    }
+
+    cout << "opening Serial port" << endl;
+    int baudrate = strtol("9600",NULL,10);
+    int fd = serialport_init("/dev/ttyACM0", baudrate);
+    if( fd==-1 ) return -1;
+    serialport_flush(fd);
+
 
     if(!cap.isOpened())
     {
@@ -81,7 +82,7 @@ int main(int argc, char** argv)
 
            if(x < 200 && state != 1)
            {
-              serial.sendChar(right);
+              serial.sendChar(right, fd);
               cout << "right" << endl;
               cout << x << endl;
               state = 1;
@@ -89,7 +90,7 @@ int main(int argc, char** argv)
            }
            else if(x > 400 && state !=2 )
            {
-              serial.sendChar(left);
+              serial.sendChar(left, fd);
               cout << "left" << endl;
               cout << x << endl;
               state = 2;
@@ -98,7 +99,7 @@ int main(int argc, char** argv)
            }
            else if(x >= 200 && x <= 400 && state != 3)
            {
-               serial.sendChar(stop);
+               serial.sendChar(stop, fd);
                cout << "stop" << endl;
                cout << x << endl;
                state = 3;

@@ -10,5 +10,5 @@
 class Serial
 {
      public:	
-	int sendChar(const char* c);
+	int sendChar(const char* c, int fd );
 };
