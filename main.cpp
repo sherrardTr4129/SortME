@@ -35,13 +35,14 @@ int main(int argc, char** argv)
     cin >> cmID;
     camID = atoi(cmID.c_str());
  
-    cout << "enter task: p for people tracking, b for block sorting, s for square tracking" << endl;
+    cout << "enter task: p for people tracking, s for square tracking" << endl;
     cin >> task;
    
     Serial serial;
     peopleFollower follow;
     square sqr;
     VideoCapture cap;
+    vector<vector<Point> > squares;
     cap.set(CV_CAP_PROP_FRAME_WIDTH, 320);
     cap.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
 
@@ -51,7 +52,7 @@ int main(int argc, char** argv)
     cout << "opening Serial port" << endl;
     int baudrate = strtol("9600",NULL,10);
     int fd = serialport_init("/dev/ttyACM0", baudrate);
-    if( fd==-1 ) return -1;
+    //if( fd==-1 ) return -1;
     serialport_flush(fd);
 
 
@@ -86,7 +87,6 @@ int main(int argc, char** argv)
               cout << "right" << endl;
               cout << x << endl;
               state = 1;
-
            }
            else if(x > 400 && state !=2 )
            {
@@ -94,17 +94,13 @@ int main(int argc, char** argv)
               cout << "left" << endl;
               cout << x << endl;
               state = 2;
-
-
            }
            else if(x >= 200 && x <= 400 && state != 3)
            {
-               serial.sendChar(stop, fd);
-               cout << "stop" << endl;
-               cout << x << endl;
-               state = 3;
-
-
+              serial.sendChar(stop, fd);
+              cout << "stop" << endl;
+              cout << x << endl;
+              state = 3;
            }
            cout << state <<"s" << endl;
            cout << "x: "<< x <<endl;
@@ -112,5 +108,40 @@ int main(int argc, char** argv)
            imshow("people", frame);
            waitKey(1);
        }// end else if
+       else if(task == "s" || task == "S")
+       {
+           int xSquare = sqr.findSquare(frame, squares);
+           if(xSquare > 700 || xSquare < 0)
+           {
+               xSquare = 320; //midscreen
+           }
+
+           if(xSquare < 200 && state != 1)
+           {
+              serial.sendChar(right, fd);
+              cout << "right" << endl;
+              cout << xSquare << endl;
+              state = 1;
+           }
+           else if(xSquare > 400 && state !=2 )
+           {
+              serial.sendChar(left, fd);
+              cout << "left" << endl;
+              cout << xSquare << endl;
+              state = 2;
+           }
+           else if(xSquare >= 200 && xSquare <= 400 && state != 3)
+           {
+              serial.sendChar(stop, fd);
+              cout << "stop" << endl;
+              cout << xSquare << endl;
+              state = 3;
+           }
+           cout << state <<"s" << endl;
+           cout << "x: "<< xSquare <<endl;
+           circle(frame, Point(xSquare, 120), 1, Scalar(0,255,0), 8);
+           imshow("squares", frame);
+           waitKey(1);
+       }//end else if
     }//end while
 }//end main
