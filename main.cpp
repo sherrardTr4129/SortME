@@ -11,9 +11,8 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv/cv.h"
 
-#include "arduino-serial-lib.h"
 
-#include "Serial.h"
+#include "UDP.h"
 #include "peopleFollower.h"
 #include "square.h"
 
@@ -27,9 +26,6 @@ int main(int argc, char** argv)
 {
     int camID;
     string cmID, task;
-    const char* left = "b";
-    const char* stop = "s";
-    const char* right = "l";
 
     cout << "enter Cam ID" << endl;
     cin >> cmID;
@@ -38,7 +34,9 @@ int main(int argc, char** argv)
     cout << "enter task: p for people tracking, s for square tracking" << endl;
     cin >> task;
    
-    Serial serial;
+
+    UDP udp;
+    const char* IP = "";
     peopleFollower follow;
     square sqr;
     VideoCapture cap;
@@ -48,13 +46,6 @@ int main(int argc, char** argv)
 
     cap.open(camID);
     Mat frame;
-
-    cout << "opening Serial port" << endl;
-    int baudrate = strtol("9600",NULL,10);
-    int fd = serialport_init("/dev/ttyACM0", baudrate);
-    //if( fd==-1 ) return -1;
-    serialport_flush(fd);
-
 
     if(!cap.isOpened())
     {
@@ -83,21 +74,21 @@ int main(int argc, char** argv)
 
            if(x < 200 && state != 1)
            {
-              serial.sendChar(right, fd);
+              udp.send("r", IP);
               cout << "right" << endl;
               cout << x << endl;
               state = 1;
            }
            else if(x > 400 && state !=2 )
            {
-              serial.sendChar(left, fd);
+              udp.send("l", IP);
               cout << "left" << endl;
               cout << x << endl;
               state = 2;
            }
            else if(x >= 200 && x <= 400 && state != 3)
            {
-              serial.sendChar(stop, fd);
+              udp.send("s", IP);
               cout << "stop" << endl;
               cout << x << endl;
               state = 3;
@@ -118,21 +109,21 @@ int main(int argc, char** argv)
 
            if(xSquare < 200 && state != 1)
            {
-              serial.sendChar(right, fd);
+              udp.send("r", IP);
               cout << "right" << endl;
               cout << xSquare << endl;
               state = 1;
            }
            else if(xSquare > 400 && state !=2 )
            {
-              serial.sendChar(left, fd);
+              udp.send("l", IP);
               cout << "left" << endl;
               cout << xSquare << endl;
               state = 2;
            }
            else if(xSquare >= 200 && xSquare <= 400 && state != 3)
            {
-              serial.sendChar(stop, fd);
+              udp.send("s", IP);
               cout << "stop" << endl;
               cout << xSquare << endl;
               state = 3;
