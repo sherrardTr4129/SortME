@@ -29,14 +29,14 @@
     <div class="container">
       <section id="main_content">
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Have a look at RoboSort V1!</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>SortME V1</h3>
 
-<p>RoboSort V1 uses the following parts. 4 sparkfun mecanum wheels, 1 Arduino UNO Rev 3 and 1 adafruit motor shield. </p>
+<p>SortME V1 uses the following parts. 4 sparkfun mecanum wheels, 1 Arduino UNO Rev 3 and 1 adafruit motor shield. </p>
 <p>Here is a picture of the current working roboSort V1</p>
 
 <IMG SRC="roboSortV1.jpg" ALT="RoboSortV1.jpg" WIDTH=520 HEIGHT=720>
 
-<p>please look below to see some videos of roboSort v1 chassis on the move!</p>
+<p>please look below to see some videos of SortME v1 chassis on the move!</p>
 
 <video width="250" height="240" controls>
   <source src="forward.mp4" type="video/mp4">
@@ -45,12 +45,22 @@ Your browser does not support the video tag.
   <source src="side.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-
+<p>If videos do not play please reference our youtube channel <a href https://www.youtube.com/channel/UCYTh-tpsm2AjannIawRdjdQ>here</a></p>
 
 <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Plans for RoboSort V2</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>SortME V2</h3>
 
-<p>Good News! Parts have been ordered to upgrade the chassis. They include sheet of ABS plastic for the base, four new micro motors with a higher torque. The Camera and beagleBone Black will also be added in V2.</p>
+<p>Out with the old in with the new! Say Hello to SortME V2!</p>
+ 
+<IMG SRC="SortMEV2.jpg" ALT="sortMEV2" WIDTH=520 HEIGHT=420>
+
+<p>Look below to see SortME V2 driving in response to what it sees using its camera. In this case it is looking for a white rectangles. SortME V2 then moves respectivly to center itself.</p>
+
+<video width="250" height="240" controls>
+  <source src="FinalRobotTest.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 
 
       </section>
